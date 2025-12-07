@@ -249,3 +249,50 @@ a {
     gap: 0.5rem; /* 缩略图之间的间距 */
     flex-wrap: wrap; /* 当缩略图数量多时自动换行 */
 }
+
+/* 7.登录页面样式 */
+#login-page {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#login-page h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#login-page label {
+    font-weight: bold;
+}
+
+#login-page input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#login-page button {
+    background-color: #8fcb9b;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#login-page button:hover {
+    background-color: #5b9279;
+}
