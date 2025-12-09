@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 聊天 - 农大“喵”星人档案</title>
+    <style>
+        /* --- 1. 全局样式 --- */
+        body {
+            font-family: 'Noto Sans SC', sans-serif; /* 使用中文字体 */
+            background-color: #f5f5f5; /* 背景色 */
+            color: #333; /* 字体颜色 */
+            margin: 0; /* 去掉默认的外边距 */
+            padding: 0; /* 去掉默认的内边距 */
+            line-height: 1.6;
+        }
+
+        /* 容器：控制内容宽度 */
+        .container {
+            max-width: 1200px; /* 最大宽度 */
+            margin: 0 auto; /* 居中显示 */
+            padding: 0 20px; /* 内边距 */
+        }
+
+        /* 链接样式 */
+        a {
+            text-decoration: none;
+            color: #5b9279;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #8fcb9b; /* 悬停效果 */
+        }
+
+        /* --- 2. 导航栏样式 --- */
+        .navbar {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .navbar .nav-links a {
+            color: #333;
+            padding: 0 15px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover,
+        .navbar .nav-links a.active {
+            color: #8fcb9b;
+        }
+
+        /* --- 3. AI 聊天内容布局 --- */
+        main {
+            padding: 40px 20px; /* 主内容区的上下内边距 */
+        }
+
+        .chatbox {
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto; /* 居中显示聊天框 */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .chatlogs {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chatlogs .user {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #cfe9ff;
+            text-align: left;
+        }
+
+        .chatlogs .ai {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #e6f7e6;
+            text-align: left;
+        }
+
+        /* 输入框容器 */
+        .input-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 输入框样式 */
+        .input-box input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* 发送按钮样式 */
+        .input-box button {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .input-box button:hover {
+            background-color: #45a049;
+        }
+
+        /* --- 4. 响应式设计 --- */
+        @media(max-width: 768px) {
+            /* 在小屏幕上调整布局 */
+            .chatbox {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .nav-links {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .navbar .nav-links a {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">CAU CAT-archive</a>
+            <nav class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="archive.html">猫咪档案</a>
+                <a href="about.html">我们的故事</a>
+                <a href="chat.html" class="active">AI 聊天</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- AI 聊天内容 -->
+    <main>
+        <div class="chatbox">
+            <div class="chatlogs" id="chatlogs">
+                <!-- 聊天记录区 -->
+            </div>
+            <div class="input-box">
+                <input type="text" id="userInput" placeholder="输入你的问题...">
+                <button onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>
