@@ -296,3 +296,60 @@ a {
 #login-page button:hover {
     background-color: #5b9279;
 }
+
+
+
+
+/* 关于我们页面 */
+#about-page {
+    background-color: #fff;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#about-page h1 {
+    font-size: 2.5rem;
+    color: #5b9279;
+    margin-bottom: 1.5rem;
+}
+
+.about-section {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    color: #8fcb9b;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-section ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
